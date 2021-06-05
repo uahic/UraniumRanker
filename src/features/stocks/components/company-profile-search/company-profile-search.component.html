@@ -1,0 +1,12 @@
+<ng-container *ngIf="results$ | async as results">
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Search Stock</mat-label>
+      <input matInput type="text" placeholder="Stock Name..." formControlName="searchField" [matAutocomplete]="auto"
+        (keyup)="search($event)">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let result of results" (onSelectionChange)="onCompanySelected(result)">{{result.displayName}}</mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</ng-container>

@@ -1,0 +1,7 @@
+<div fxLayout="column" fxFlex="1 1 auto">
+  <!-- <div fxLayoutAlign="start center">
+    <button mat-raised-button color="primary" (click)="onOpenAddStockDialog()">Add Stock</button>
+  </div> -->
+  <app-company-profile-search (onValueChange)="onAddStock($event)"></app-company-profile-search>
+  <app-user-stocks-list [stocks]="userStocks$ | async" (onRowAction)="onRowAction($event)"></app-user-stocks-list>
+</div>

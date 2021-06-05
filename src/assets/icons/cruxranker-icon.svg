@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="cruxranker-icon.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8"
+     inkscape:cx="26.196107"
+     inkscape:cy="33.280879"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1200"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:grid-bbox="true" />
+  <defs
+     id="defs1675" />
+  <metadata
+     id="metadata1678">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.03594168;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect819"
+       width="20.751959"
+       height="40.689423"
+       x="21.925798"
+       y="5.3660212" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0304201;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect819-3"
+       width="24.814459"
+       height="24.375877"
+       x="1.1738397"
+       y="21.679564" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0246527;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect819-3-6"
+       width="24.751959"
+       height="16.049557"
+       x="38.677757"
+       y="30.005907" />
+    <g
+       id="g1052"
+       transform="matrix(0.04086573,0,0,0.03955108,22.148335,5.1948405)">
+      <g
+         id="g992">
+        <path
+           id="path984"
+           d="m 269.085,112.617 c 0,0 17.202,-49.684 8.736,-54.355 -16.641,-5.766 -50.948,-5.329 -63.722,0 -12.774,5.321 9.614,54.355 9.614,54.355 z"
+           style="fill:#59a29f"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path986"
+           d="m 247.481,53.955 c -12.382,0.03 -26.932,1.619 -33.383,4.308 -12.774,5.321 9.614,54.355 9.614,54.355 h 23.473 z"
+           style="fill:#7fcdcc"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path988"
+           d="m 223.896,111.372 -43.861,264.994 66.291,55.065 61.183,-55.065 -38.462,-264.994 z"
+           style="fill:#63aaa5"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path990"
+           d="m 223.896,111.372 -43.861,264.994 66.291,55.065 0.568,-320.059 z"
+           style="fill:#97d6d5"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         id="g994" />
+      <g
+         id="g996" />
+      <g
+         id="g998" />
+      <g
+         id="g1000" />
+      <g
+         id="g1002" />
+      <g
+         id="g1004" />
+      <g
+         id="g1006" />
+      <g
+         id="g1008" />
+      <g
+         id="g1010" />
+      <g
+         id="g1012" />
+      <g
+         id="g1014" />
+      <g
+         id="g1016" />
+      <g
+         id="g1018" />
+      <g
+         id="g1020" />
+      <g
+         id="g1022" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.20378304px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.25509456"
+       x="0.66381317"
+       y="57.699867"
+       id="text1056"
+       transform="scale(1.0451929,0.95676118)"><tspan
+         sodipodi:role="line"
+         id="tspan1054"
+         x="0.66381317"
+         y="57.699867"
+         style="stroke-width:0.25509456">CruxRanker</tspan></text>
+  </g>
+</svg>

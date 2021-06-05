@@ -1,0 +1,34 @@
+<div fxLayout="column" class="form-wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSignIn()" fxLayout="column" fxLayoutGap="8px">
+    <h2 mat-dialog-title>Sign In</h2>
+    <mat-form-field [floatLabel]="'auto'">
+      <input matInput type="email" formControlName="email" placeholder="Email" required>
+      <mat-error>Invalid E-Mail format</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" formControlName="password" placeholder="Password" required>
+      <mat-error>Invalid Password</mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="form.hasError('reason')">{{form.getError('reason')}}</mat-error>
+    <button mat-raised-button type="submit" [disabled]="!form.valid" color="primary">Login</button>
+  </form>
+  <span></span>
+  <button mat-flat-button color="accent" routerLink='/auth/signup'>Create Account</button>
+  <mat-progress-bar mode="indeterminate" *ngIf="isLoading$ | async"></mat-progress-bar>
+  <mat-divider></mat-divider>
+  <h3 class="mat-typography">Alternatives:</h3>
+  <div fxLayout="column">
+    <button fxFlex mat-raised-button color="primary" (click)="onSignInWithGoogle()" fxLayout="center center">
+      <fa-icon [icon]="faGoogle" size="2x"
+        [styles]="{'padding-top': '6px', 'padding-bottom': '6px', 'vertical-align': 'unset'}"></fa-icon>
+      Login with Google
+    </button>
+    <button fxFlex mat-raised-button color="primary" (click)="onSignInWithFacebook()" fxLayout="center center">
+      <fa-icon [icon]="faFacebook" size="2x"
+        [styles]="{'padding-top': '6px', 'padding-bottom': '6px', 'vertical-align': 'unset'}"></fa-icon>
+      Login with Facebook
+    </button>
+    <span></span>
+    <button mat-stroked-button color="" routerLink="/auth/reset-password">Forgot Password?</button>
+  </div>
+</div>
