@@ -1,0 +1,22 @@
+<!-- <mat-icon fontSet="fontawesome" fontIcon="fa-facebook"></mat-icon> -->
+<!-- <i class="fa fa-user-circle"></i> -->
+
+<ng-container *ngIf="isSignedIn$ | async">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</ng-container>
+
+<!-- <ng-template #signInTmpl>
+  <button mat-raised-button (click)="onSignIn()" color="accent">
+    <mat-icon>account_circle</mat-icon>
+    Sign In
+  </button>
+</ng-template> -->
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="onSignOut()">
+    <mat-icon>logout</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>

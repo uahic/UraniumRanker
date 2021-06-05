@@ -1,0 +1,66 @@
+<div fxflex fxLayout="column">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="onApplyFilter($event)" placeholder="Symbol, Name, #Stars,..." autocomplete="off">
+  </mat-form-field>
+
+  <div fxLayout="column">
+    <form [formGroup]="form" autocomplete="off" class="mat-elevation-z8">
+      <ng-container formArrayName="rows">
+        <table #table mat-table [dataSource]="dataSource" matSort matSortStart="desc">
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <mat-form-field style="width: 70px;" appearance="none">
+                <input matInput type="text" formControlName="symbol" [readonly]="true">
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="displayName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <mat-form-field style="width: 160px; " appearance="none">
+                <input matInput type="text" formControlName="displayName" [readonly]="true"
+                  style="max-width: 150px; text-overflow: ellipsis;">
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <!-- Rating Column -->
+          <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Rating</th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <mat-form-field style="width: 200px;" appearance="none">
+                <input matInput type="text" formControlName="rating" [readonly]="true" hidden>
+                <ngx-material-rating color="accent" [dense]="true" [readonly]="true" formControlName="rating" [max]="5">
+                </ngx-material-rating>
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="numRatings">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>#Ratings</th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <mat-form-field style="width: 70px;" appearance="none">
+                <input matInput type="number" formControlName="numRatings" [readonly]="true">
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="3">No data available or matching the filter options</td>
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </ng-container>
+    </form>
+  </div>
+</div>

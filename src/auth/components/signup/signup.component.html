@@ -1,0 +1,72 @@
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="userDetailForm">
+    <ng-template matStepLabel>User Details</ng-template>
+    <form [formGroup]="userDetailForm" fxLayout="column">
+      <mat-form-field [floatLabel]="'auto'">
+        <input matInput type="text" formControlName="displayName" placeholder="User Name" required>
+        <mat-error *ngIf="userDetailForm.get('displayName').errors?.required">Invalid user name</mat-error>
+      </mat-form-field>
+      <mat-form-field [floatLabel]="'auto'">
+        <input matInput type="email" formControlName="email" placeholder="Email" required>
+        <mat-error *ngIf="userDetailForm.get('email').errors?.email ||  userDetailForm.get('email').errors?.required">
+          Invalid email format</mat-error>
+      </mat-form-field>
+      <mat-form-field [floatLabel]="'auto'">
+        <input matInput type="email" formControlName="emailConfirmation" placeholder="Confirm Email" required>
+        <mat-error
+          *ngIf="userDetailForm.get('emailConfirmation').hasError('email')|| userDetailForm.get('emailConfirmation').hasError('required')">
+          Invalid email format</mat-error>
+        <mat-error *ngIf="userDetailForm.get('emailConfirmation').hasError('nomatch')">Email adresses do not match
+        </mat-error>
+      </mat-form-field>
+      <div class="stepper-actions">
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [formGroup]="userPasswdForm">
+    <ng-template matStepLabel>Password</ng-template>
+    <form [formGroup]="userPasswdForm" fxLayout="column">
+      <mat-form-field>
+        <input matInput type="password" formControlName="password" placeholder="Password" required>
+        <mat-error *ngIf="userPasswdForm.get('password').hasError('required')">Invalid password</mat-error>
+        <mat-error *ngIf="userPasswdForm.get('password').hasError('minlength')">Must be longer than 6 characters
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" formControlName="passwordConfirmation" placeholder="Confirm Password" required>
+        <mat-error *ngIf="userPasswdForm.get('passwordConfirmation').hasError('required')">Invalid password</mat-error>
+        <mat-error *ngIf="userPasswdForm.get('passwordConfirmation').hasError('nomatch')">Passwords do not match
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <div class="stepper-actions">
+      <button mat-button matStepperPrevious color="primary">Back</button>
+      <button mat-button matStepperNext color="primary">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Review</ng-template>
+    <div fxLayout="column">
+      <mat-form-field>
+        <mat-label>User Name</mat-label>
+        <input matInput disabled [value]="userDetailForm.get('displayName').value">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput disabled [value]="userDetailForm.get('email').value" placeholder="Email">
+      </mat-form-field>
+    </div>
+    <div class="stepper-actions">
+      <button mat-button matStepperPrevious color="primary">Back</button>
+      <button mat-flat-button color="primary" (click)="onSignUp()">Sign Up</button>
+    </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading$ | async"></mat-progress-bar>
+  </mat-step>
+</mat-horizontal-stepper>
+<div class="general-actions">
+  <button mat-button routerLink="/auth/signin">
+    <mat-icon>arrow_back</mat-icon>
+    Sign In
+  </button>
+</div>

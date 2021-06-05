@@ -1,0 +1,4 @@
+<div fxLayout="column" fxFlex="1 1 auto">
+  <button mat-raised-button (click)="onAddCompany()" color="primary">Add New</button>
+  <app-company-profile-list [profiles]="profiles$ | async"></app-company-profile-list>
+</div>

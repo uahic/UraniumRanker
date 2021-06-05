@@ -1,9 +1,18 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@auth/*": [
+        "auth/*"
+      ],
+      "@stocks/*": [
+        "features/stocks/*"
+      ]
+    },
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
   },
   "files": [
     "src/main.ts",

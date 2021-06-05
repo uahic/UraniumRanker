@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserStocksService } from '../features/stocks/state/user-stocks.service';
+import { AuthService } from '../auth/state/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'crux-ranker';
+  title = 'Uranium-Ranker';
+
+  constructor(
+    private authService: AuthService,
+    private stockService: UserStocksService
+    ) {
+  }
 }
