@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { createCompanyProfile } from '../../state/company-profile.model';
+import { CompanyProfilesQuery } from '../../state/company-profiles.query';
 import { CompanyProfilesService } from '../../state/company-profiles.service';
 import { ISINValidator } from './isin-validator';
 
@@ -17,6 +18,7 @@ export class AddCompanyDialogComponent implements OnInit {
 
   constructor(
     private companyService: CompanyProfilesService,
+    private companyQuery: CompanyProfilesQuery,
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<AddCompanyDialogComponent>
   ) {
@@ -37,7 +39,13 @@ export class AddCompanyDialogComponent implements OnInit {
 
   onSubmit(): void {
     const { displayName, isin, symbol }: { displayName: string, isin: string, symbol: string } = this.form.value;
-    const companyProfile = createCompanyProfile(isin, displayName, { symbol: symbol.toUpperCase() });
+    if (this.companyQuery.hasEntity(isin)) {
+      this.form.setErrors({
+        isinAlreadyExists: true
+      });
+      return;
+    }
+    const companyProfile = createCompanyProfile(isin, displayName.trim(), { symbol: symbol.trim().toUpperCase() });
     this.companyService.add(companyProfile);
     this.dialogRef.close();
   }
