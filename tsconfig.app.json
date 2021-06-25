@@ -2,15 +2,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@auth/*": [
-        "auth/*"
-      ],
-      "@stocks/*": [
-        "features/stocks/*"
-      ]
-    },
     "outDir": "./out-tsc/app",
     "types": [],
   },

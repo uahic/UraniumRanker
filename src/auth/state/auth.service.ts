@@ -13,6 +13,6 @@ export class AuthService extends FireAuthService<AuthState>{
   }
 
   createProfile(user: User): AuthState['profile'] {
-    return { uid: user.uid, email: user.email, displayName: user.displayName };
+    return { uid: user.uid, displayName: user.displayName };
   }
 }

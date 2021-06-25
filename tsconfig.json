@@ -13,6 +13,17 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "paths": {
+      "@auth/*": [
+        "src/auth/*"
+      ],
+      "@stocks/*": [
+        "src/features/stocks/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"

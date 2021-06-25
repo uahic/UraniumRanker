@@ -30,6 +30,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@material-extended/mde": "^3.0.3",
     "@ngneat/until-destroy": "^8.0.4",
     "akita-ng-fire": "^6.0.0",
     "firebase": "^8.6.5",
