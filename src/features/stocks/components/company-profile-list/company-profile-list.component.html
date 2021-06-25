@@ -45,9 +45,10 @@
           <ng-container matColumnDef="numRatings">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>#Ratings</th>
             <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
-              <mat-form-field style="width: 70px;" appearance="none">
-                <input matInput type="number" formControlName="numRatings" [readonly]="true">
-              </mat-form-field>
+              <button mat-icon-button [matBadge]="form.controls.rows.controls[i].controls.numRatings.value"
+                matBadgeSize="small" [mdePopoverTriggerFor]="ratingPopover" mdePopoverTriggerOn="click" #popoverTrigger="mdePopoverTrigger" (click)="setSelectedIndex(i)">
+                <mat-icon>star</mat-icon>
+              </button>
             </td>
           </ng-container>
 
@@ -64,3 +65,11 @@
     </form>
   </div>
 </div>
+
+<mde-popover #ratingPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card style="max-width: 300px">
+    <mat-card-content>
+      <app-company-individual-ratings [id]="selectedIsin"></app-company-individual-ratings>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>

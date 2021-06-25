@@ -14,6 +14,7 @@ import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { AuthModule } from '../auth/auth.module';
+import { MdePopoverModule } from '@material-extended/mde';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,9 @@ import { AuthModule } from '../auth/auth.module';
 
     // Material
     MatIconModule,
+
+    // Material Extensions
+    MdePopoverModule,
 
     // Firebase
     AngularFireModule.initializeApp(environment.firebase),

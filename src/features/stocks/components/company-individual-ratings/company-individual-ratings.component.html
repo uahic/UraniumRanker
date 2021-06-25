@@ -1,0 +1,11 @@
+<ng-container *ngIf="userRatings$ | async as ratings">
+  <mat-list class="rating-popover-container">
+    <ng-container *ngFor="let rating of ratings">
+      <mat-list-item>
+        <ngx-material-rating matLine color="primary" [dense]="true" [readonly]="true" [value]="rating.rating"></ngx-material-rating>
+        <span matLine>{{rating.displayName}}</span>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+</ng-container>

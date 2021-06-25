@@ -15,10 +15,11 @@ import { CompanyProfile } from '../../state/company-profile.model';
 })
 export class CompanyProfileListComponent implements OnInit, OnChanges, AfterViewInit {
 
-  @ViewChild(MatSort) sort: MatSort;
   @Input() profiles: CompanyProfile[];
+  @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  selectedIsin:  string | undefined = undefined;
 
   displayedColumns = ['symbol', 'displayName', 'rating', 'numRatings'];
   dataSource = new MatTableDataSource();
@@ -42,8 +43,6 @@ export class CompanyProfileListComponent implements OnInit, OnChanges, AfterView
       const profiles = this.profiles;
       const rowArray = this.form.get('rows') as FormArray;
       rowArray.clear();
-      profiles.forEach(v =>
-        console.log('num Ratings', v))
       const rows = profiles.map(value => this.fb.group({
         id: new FormControl(value.id),
         symbol: new FormControl(value.symbol),
@@ -62,6 +61,11 @@ export class CompanyProfileListComponent implements OnInit, OnChanges, AfterView
     const controls = (this.form.get('rows') as FormArray).controls;
     this.dataSource = new MatTableDataSource(controls);
     this.dataSource.sort = this.sort;
+    // this.dataSource.sortData = (data: AbstractControl[], sort: MatSort) => {
+    //   return data.sort((a: AbstractControl, b: AbstractControl) => {
+    //     a.value
+    //   });
+    // };
     this.dataSource.paginator = this.paginator;
     this.dataSource.sortingDataAccessor = (data: AbstractControl, sortHeaderId: string) => {
       const value: any = data.value[sortHeaderId];
@@ -78,5 +82,8 @@ export class CompanyProfileListComponent implements OnInit, OnChanges, AfterView
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  setSelectedIndex(index: number) {
+    this.selectedIsin = this.profiles[index].id as string;
+  }
 
 }

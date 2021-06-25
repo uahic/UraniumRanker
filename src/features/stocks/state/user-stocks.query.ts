@@ -15,4 +15,8 @@ export class UserStocksQuery extends QueryEntity<UserStocksState> {
     return !!hasMatch;
   }
 
+  selectByISIN(isin: string) {
+    return this.selectAll({ filterBy: entity => entity.isin === isin });
+  }
+
 }
